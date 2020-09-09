@@ -13,25 +13,25 @@ https://developers.weixin.qq.com/s/A3maQemS7qkc
 
 
 ##### 效果图
-![效果图01.png](https://note.youdao.com/yws/res/11/WEBRESOURCE16f003c35096f1b648948009b5827b34)
+![效果图01.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图01.png)
 
 ##### 右侧快选
-![效果图02.png](https://note.youdao.com/yws/res/13/WEBRESOURCEc730d5ab77a2812abc445ea76964ee29)
+![效果图02.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图02.png)
 
 ##### 点击通讯录
-![效果图03.png](https://note.youdao.com/yws/res/19/WEBRESOURCE591f30f2b5d3071705f6d618e00b3d48)
+![效果图03.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图03.png)
 
 ##### 点击排序
-![效果图04.png](https://note.youdao.com/yws/res/22/WEBRESOURCEe02557f4f22bcd052507ca0892bd5349)
+![效果图04.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图04.png)
 
 ##### 多选效果
-![效果图05.png](https://note.youdao.com/yws/res/24/WEBRESOURCE35fb013f111468b02f928791b6cb5b1e)
+![效果图05.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图05.png)
 
 ##### 全选效果
-![效果图06.png](https://note.youdao.com/yws/res/26/WEBRESOURCE8dc5a30a1a94531ae50957417110db33)
+![效果图06.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图06.png)
 
 ##### 单选效果
-![效果图07.png](https://note.youdao.com/yws/res/28/WEBRESOURCEec81a42589c1ebfbbd39a6fae92faed8)
+![效果图07.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图07.png)
 
 ##### 搜索效果
-![效果图08.png](https://note.youdao.com/yws/res/30/WEBRESOURCEc68d5faac9cb5e804865b2636dbea8e8)
+![效果图08.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图08.png)
