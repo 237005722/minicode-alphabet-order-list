@@ -1,0 +1,139 @@
+/* components/alphabet-order-list/alphabet-order-list.wxss */
+
+.alphabetical-order {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* background-color: #FAFAFA; */
+  background-color: #F5F5F5;
+}
+
+.alphabet {
+  position: absolute;
+  z-index: 1000;
+  text-align: center;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  color: #333;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.letter {
+  flex: 1;
+  padding: 0 15rpx;
+}
+
+.letter-toast {
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  font-size: 96rpx;
+  line-height: 96rpx;
+  width: 96rpx;
+}
+
+.data-list {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.letter-tag {
+  /* background-color: whitesmoke; */
+  background-color: #F5F5F5;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 15rpx 30rpx;
+  color: #888;
+}
+.tag-item {
+  position: relative;
+  padding: 20rpx 30rpx;
+  background-color: white;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+
+}
+
+.tag-item:active {
+  background-color: #d8d8d8;
+}
+.divide-line {
+  margin: 0 30rpx;
+  height: 1rpx;
+  width: auto;
+  background-color: whitesmoke;
+}
+.item-image {
+  width: 100rpx;
+  height: 100rpx;
+  background-color: whitesmoke;
+  margin-right: 30rpx;
+}
+.item-text {
+  font-size: 32rpx;
+  line-height: 50rpx;
+  flex: 1;
+  min-height: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+.weui-menulist__flex-end{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+
+  justify-content: flex-end;
+  text-align: right;
+}
+.weui-menulist__flex-end.item-text{
+  line-height: 100rpx;
+}
+.grey{
+  color: #7e7c7c;
+}
+.warning{
+  color: rgba(239, 36, 0, 0.8);
+}
+.iconfont{
+  margin-right: 10rpx;
+}
+.iconfont.menu{
+  font-size:80rpx;
+  margin-right: 0;
+}
+.checkbox{
+  display: flex;
+}
+.checkbox .tag-item{
+  width: 100%;
+}
+.checkbox checkbox,
+.checkbox radio{
+  display:inline-flex;
+  margin-right:15rpx;
+}
+
+radio {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+@import "/lib/searchbar.wxss";
+page{
+  overflow: hidden; /*如果有搜索栏，并且搜索栏为fixed时，需设置此CSS*/
+}
+.weui-search_r .weui-cell__hd{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 30rpx;
+
+}
+.weui-search_r .weui-cell__hd image {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+.weui-search_r .weui-cell__bd{
+  font-size: 32rpx;
+  line-height: 50rpx;
+  flex: 1;
+  min-height: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

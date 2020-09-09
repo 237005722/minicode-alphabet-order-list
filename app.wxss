@@ -1,0 +1,143 @@
+@import "/lib/iconfont.wxss";
+page {
+  background-color: #F5F5F5;
+  letter-spacing: 2rpx;
+  word-spacing: 2rpx;
+  font-family:-apple-system-font;
+  -webkit-overflow-scrolling: touch; /*iOS下开启惯性滚动*/
+}
+
+.grey{
+  color: #7e7c7c;
+}
+.dark-grey{
+  color: #575656;
+}
+.white{
+  color: #FFFFFF;
+}
+.success{
+  color: #0099FF;
+}
+
+/*使用于grid类型菜单*/
+.weui-menu__flex{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+
+  align-items: center;
+  justify-content: center;
+}
+/*使用于list类型菜单*/
+.weui-menulist__flex{
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:flex;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+.weui-menulist__flex.flex-end{
+  justify-content: flex-end;
+  text-align: right;
+}
+.weui-menulist__flex.space-between{
+  justify-content: space-between;
+}
+.weui-menulist__flex.space-around{
+  justify-content: space-around;
+}
+
+/* 重写 checkbox 样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx; /* 背景的宽 */
+  height: 40rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  border-color: #0099FF;
+  background: #0099FF;
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+/*  重写 radio 样式  */
+/* 未选中的 背景样式 */
+radio .wx-radio-input{
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+  border-color: #0099FF;
+  background: #0099FF;
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size:30rpx; /* 对勾大小 30rpx */
+  color:#fff; /* 对勾颜色 白色 */
+  background: transparent;
+  transform:translate(-50%, -50%) scale(1);
+  -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+/* 仿 checkbox 样式，适用于页面上想要checkbox的样式但不使用checkbox组件的情况，因为checkbox组件不能在js里控制或阻止选中情况  */
+/* 未选中的 背景样式 */
+.wx-checkbox{
+  border: 2rpx solid #0099FF;
+  background: #FFFFFF;
+  border-radius: 50%;/* 圆角 */
+  width: 40rpx; /* 背景的宽 */
+  height: 40rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+.wx-checkbox.wx-checkbox-checked{
+  border-color: #0099FF;
+  background: #0099FF;
+  
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+.wx-checkbox.wx-checkbox-checked:before{
+  content: ' '; /* 空白内容占位，当做盒模型处理，见下面*/
+  position: absolute;
+  top: 8rpx;
+  left: 15rpx;
+  width: 11rpx; /* 勾的短边*/
+  height: 21rpx; /* 勾的长边*/
+  border: solid white; /* 勾的颜色*/
+  border-width: 0 5rpx 5rpx 0; /* 勾的宽度*/
+  transform: rotate(45deg); /* 定制宽高加上旋转可以伪装内部的白色勾*/
+}
+/*禁选*/
+.wx-checkbox.wx-checkbox-disabled{
+  border-color: rgb(163, 164, 165);
+  background: rgba(178, 180, 180, 0.5);
+}
+/*禁选-深色*/
+.wx-checkbox.wx-checkbox-disabled_dark{
+  border-color: rgb(137, 137, 138);
+  background: rgba(130, 131, 131, 0.5);
+}

@@ -1,0 +1,100 @@
+<!-- 教师通讯录示例 -->
+<view class="weui-search-bar" id="searchBar">
+  <view wx:if="{{checkType == 'checkbox' && !searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex" style="flex-basis: 0;margin-left: 0rpx;margin-right: 10rpx;" bindtap="changeCheckAllType">
+    <text class="iconfont icon-allcheck {{!checkAllType ? 'grey' : 'success'}}"></text>
+    <text class="{{}}">{{!checkAllType ? '全选' : '反选'}}</text>
+  </view>
+  <form class="weui-search-bar__form">
+    <view class="weui-search-bar__box weui-menu__flex">
+      <text class="iconfont icon-search weui-icon-search"></text>
+      <input type="text" class="weui-search-bar__input" id="searchInput" name="searchInput" value="{{searchText}}" bindinput="searchTextInput" bindconfirm="searchSubmit" placeholder="{{placeholder}}" focus="{{searchFocus}}" confirm-type="search" />
+      <text class="iconfont icon-round_close_light weui-icon-clear" bindtap="searchClearTap"></text>
+    </view>
+    <label wx:if="{{!searchFocus}}" class="weui-search-bar__label weui-menu__flex" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);" bindtap="searchTextTap">
+      <text class="iconfont icon-search weui-icon-search"></text>
+      <text class="span">{{placeholder}}</text>
+    </label>
+  </form>
+  <view wx:if="{{!searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex" bindtap="changeSortType">排序</view>
+  <view wx:if="{{searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex" bindtap="searchTextTap">取消</view>
+  <!-- <view wx:if="{{searchFocus}}" class="weui-search-bar__form weui-search-bar__cancel-btn weui-menu__flex success" bindtap="searchSubmit">搜索</view> -->
+</view>
+<view style="height:{{searchHeight}}px;"></view>
+
+<block wx:if="{{teacherList_search.length > 0}}">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_small-appmsg">
+      <view class="weui-cells">
+        
+        <!--checkbox搜索结果-->
+        <block wx:if="{{checkType == 'checkbox'}}">
+          <checkbox-group bindchange="checkBoxChange">
+            <label wx:for="{{teacherList_search}}" wx:key="id" class="checkbox">
+              <view class="weui-cell weui-cell_access weui-search_r" data-item='{{item}}'>
+                <checkbox value="{{item.id}}" checked="{{item.checked}}"/>
+                <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
+                  <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
+                </view>
+                <view class="weui-cell__bd weui-cell_primary">
+                  <view>{{item.name}}</view>
+                  <view class="grey">{{item.positionName}}</view>
+                </view>
+                <view class="weui-cell__ft">
+                  <view class="weui-menulist__flex">
+                    <text style="font-size: 32rpx;line-height: 50rpx;">{{item.mobile}}</text>
+                  </view>
+                </view>
+              </view>
+            </label>
+          </checkbox-group>
+        </block>
+        <!--radio搜索结果-->
+        <block wx:elif="{{checkType == 'radio'}}">
+          <radio-group bindchange="radioChange">
+            <label wx:for="{{teacherList_search}}" wx:key="id" class="checkbox">
+              <view class="weui-cell weui-cell_access weui-search_r" data-item='{{item}}'>
+                <radio value="{{item.id}}" checked="{{item.checked}}"/>
+                <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
+                  <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
+                </view>
+                <view class="weui-cell__bd weui-cell_primary">
+                  <view>{{item.name}}</view>
+                  <view class="grey">{{item.positionName}}</view>
+                </view>
+                <view class="weui-cell__ft">
+                  <view class="weui-menulist__flex">
+                    <text style="font-size: 32rpx;line-height: 50rpx;">{{item.mobile}}</text>
+                  </view>
+                </view>
+              </view>
+            </label>
+          </radio-group>
+        </block>
+        <!--其他check或常规搜索结果-->
+        <block wx:else>
+          <view wx:for="{{teacherList_search}}" wx:key="id" class="weui-cell weui-cell_access weui-search_r" data-item='{{item}}' bindtap="itemClickEvent">
+            <view class="weui-cell__hd weui-cell_primary weui-menu__flex">
+              <image src="{{item.photo}}" alt="{{item.name}}" class="bg_light-grey"></image>
+            </view>
+            <view class="weui-cell__bd weui-cell_primary">
+              <view>{{item.name}}</view>
+              <view class="grey">{{item.positionName}}</view>
+            </view>
+            <view class="weui-cell__ft">
+              <view class="weui-menulist__flex">
+                <text style="font-size: 32rpx;line-height: 50rpx;">{{item.mobile}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:else>
+  <alphabet-order-list wx:if="{{checkType == 'checkbox'}}" id="alphabet_order_list" source="{{teacherList}}" groupKey="HZPY" imageKey="photo" textKey="name" phoneKey="mobile" positionKey="positionName" checkType="{{checkType}}" checkValue="id" checkStatus="checked" searchHeight="{{searchHeight}}" catchcheckboxchange="checkBoxChange" />
+  <alphabet-order-list wx:elif="{{checkType == 'radio'}}" id="alphabet_order_list" source="{{teacherList}}" groupKey="HZPY" imageKey="photo" textKey="name" phoneKey="mobile" positionKey="positionName" checkType="{{checkType}}" checkValue="id" checkStatus="checked" searchHeight="{{searchHeight}}" catchradiochange="radioChange" />
+  <alphabet-order-list wx:else id="alphabet_order_list" source="{{teacherList}}" groupKey="HZPY" imageKey="photo" textKey="name" phoneKey="mobile" positionKey="positionName" checkType="{{checkType}}" searchHeight="{{searchHeight}}" catchitemtap="itemClickEvent" />
+</block>

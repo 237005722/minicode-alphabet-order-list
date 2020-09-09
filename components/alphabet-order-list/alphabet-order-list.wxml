@@ -1,0 +1,78 @@
+<!--components/alphabet-order-list/alphabet-order-list.wxml-->
+<view class='alphabetical-order'>
+  <view id='alphabet' class='alphabet' style='line-height: {{letterHeight}}px; background-color: {{startTouchAlphabet ? "rgba(0, 0, 0, 0.2)" : "transparent"}};' catchtouchcancel='_letterTouchCancelEvent' catchtouchstart='_letterTouchStartEvent' catchtouchmove='_letterTouchMoveEvent'
+    catchtouchend='_letterTouchEndEvent'>
+    <view class='letter' wx:for="{{alphabet}}" wx:key>{{item == 'PoundSign' ? '#' : item}}</view>
+    <view style="height:{{searchHeight}}px;"></view>
+  </view>
+  <view wx:if='{{startTouchAlphabet}}' class='letter-toast'>{{touchLetter == 'PoundSign' ? '#' : touchLetter}}</view>
+  <scroll-view class='data-list' scroll-y scroll-into-view='{{touchLetter}}'>
+    <!--多选模式-->
+    <block wx:if="{{checkType == 'checkbox'}}">
+      <checkbox-group bindchange="_checkboxchange">
+        <block wx:for='{{dataSource}}' wx:key='{{pitem.tag}}' wx:for-item='pitem'>
+          <view id='{{pitem.tag}}' class='letter-tag' style='{{tagStyle}}'>{{pitem.tag == 'PoundSign' ? '#' : pitem.tag}}</view>
+          <block wx:for='{{pitem.data}}' wx:key wx:for-item='item' wx:for-index='j'>
+            <label class="checkbox">
+              <view class='tag-item' data-item='{{item}}'> <!-- bindtap='_itemtap' -->
+                <checkbox value="{{item[checkValue]}}" checked="{{item[checkStatus]}}"/>
+                <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src='{{item[imageKey]}}'></image>
+                <view id="{{item[textKey]}}" class='item-text' style='{{textStyle}}'>
+                  <view>{{item[textKey]}}</view>
+                  <view wx:if='{{positionKey}}' class='grey' style='{{positionStyle}}'>{{item[positionKey]}}</view>
+                </view>
+                <view wx:if='{{phoneKey}}' class='item-text grey' style='{{phoneStyle}}' data-phone='{{item[phoneKey]}}' bindlongtap="_copyphonekey">{{item[phoneKey]}}</view>
+              </view>
+            </label>
+            <view wx:if="{{j != pitem.data.length - 1}}" class='divide-line'></view>
+          </block>
+        </block>
+      </checkbox-group>
+      <view class='letter-tag' style='height: {{bottomHeight}}rpx'></view>
+    </block>
+    <!--单选模式-->
+    <block wx:elif="{{checkType == 'radio'}}">
+      <radio-group bindchange="_radiochange">
+        <block wx:for='{{dataSource}}' wx:key='{{pitem.tag}}' wx:for-item='pitem'>
+          <view id='{{pitem.tag}}' class='letter-tag' style='{{tagStyle}}'>{{pitem.tag == 'PoundSign' ? '#' : pitem.tag}}</view>
+          <block wx:for='{{pitem.data}}' wx:key wx:for-item='item' wx:for-index='j'>
+            <label class="checkbox">
+              <view class='tag-item' data-item='{{item}}'> <!-- bindtap='_itemtap' -->
+                <radio value="{{item[checkValue]}}" checked="{{item[checkStatus]}}"/>
+                <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src='{{item[imageKey]}}'></image>
+                <view class='item-text' style='{{textStyle}}'>
+                  <view>{{item[textKey]}}</view>
+                  <view wx:if='{{positionKey}}' class='grey' style='{{positionStyle}}'>{{item[positionKey]}}</view>
+                </view>
+                <view wx:if='{{phoneKey}}' class='item-text grey' style='{{phoneStyle}}' data-phone='{{item[phoneKey]}}' bindlongtap="_copyphonekey">{{item[phoneKey]}}</view>
+              </view>
+            </label>
+            <view wx:if="{{j != pitem.data.length - 1}}" class='divide-line'></view>
+          </block>
+        </block>
+      </radio-group>
+      <view class='letter-tag' style='height: {{bottomHeight}}rpx'></view>
+    </block>
+    <!--常规模式-->
+    <block wx:else>
+      <block wx:for='{{dataSource}}' wx:key='{{pitem.tag}}' wx:for-item='pitem'>
+        <view id='{{pitem.tag}}' class='letter-tag' style='{{tagStyle}}'>{{pitem.tag == 'PoundSign' ? '#' : pitem.tag}}</view>
+        <block wx:for='{{pitem.data}}' wx:key wx:for-item='item' wx:for-index='j'>
+          <view class='tag-item' data-item='{{item}}' bindtap='_itemtap'>
+            <image wx:if='{{imageKey}}' class='item-image' style='{{imageStyle}}' src='{{item[imageKey]}}'></image>
+            <view class='item-text' style='{{textStyle}}'>
+              <view>{{item[textKey]}}</view>
+              <view wx:if='{{positionKey}}' class='{{checkIcon && item[checkIcon] ? "warning" : "grey"}}' style='{{positionStyle}}'>{{item[positionKey]}}</view>
+            </view>
+            <view wx:if='{{phoneKey}}' class='item-text grey' style='{{phoneStyle}}' data-phone='{{item[phoneKey]}}' bindlongtap="_copyphonekey">{{item[phoneKey]}}</view>
+            <view wx:if='{{checkIcon && item[checkIcon]}}' class='item-text weui-menulist__flex-end warning'><text class="iconfont menu {{item[checkIcon]}}"></text></view>
+          </view>
+          <view wx:if="{{j != pitem.data.length - 1}}" class='divide-line'></view>
+        </block>
+      </block>
+      <view class='letter-tag' style='height: {{bottomHeight}}rpx'></view>
+    </block>
+    
+    <view style="height:{{searchHeight}}px;"></view>
+  </scroll-view>
+</view>

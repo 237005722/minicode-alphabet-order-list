@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "教师通讯录",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "alphabet-order-list": "/components/alphabet-order-list/alphabet-order-list"
+  }
+}
