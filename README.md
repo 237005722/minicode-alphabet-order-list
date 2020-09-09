@@ -13,25 +13,25 @@ https://developers.weixin.qq.com/s/A3maQemS7qkc
 
 
 ##### 效果图
-![效果图01.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图01.png)
+![效果图01.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/01.png)
 
 ##### 右侧快选
-![效果图02.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图02.png)
+![效果图02.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/02.png)
 
 ##### 点击通讯录
-![效果图03.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图03.png)
+![效果图03.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/03.png)
 
 ##### 点击排序
-![效果图04.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图04.png)
+![效果图04.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/04.png)
 
 ##### 多选效果
-![效果图05.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图05.png)
+![效果图05.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/05.png)
 
 ##### 全选效果
-![效果图06.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图06.png)
+![效果图06.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/06.png)
 
 ##### 单选效果
-![效果图07.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图07.png)
+![效果图07.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/07.png)
 
 ##### 搜索效果
-![效果图08.png](https://github.com/237005722/minicode-alphabet-order-list/raw/master/introduction/效果图08.png)
+![效果图08.png](https://raw.githubusercontent.com/237005722/minicode-alphabet-order-list/raw/master/introduction/08.png)
